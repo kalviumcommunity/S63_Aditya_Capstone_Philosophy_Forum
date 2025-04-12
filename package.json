@@ -1,0 +1,15 @@
+{
+  "name": "s63_aditya_capstone_philosophy_forum",
+  "version": "1.0.0",
+  "description": "Philosophy Forum – Think & Discuss",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}
