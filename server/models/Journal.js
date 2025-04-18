@@ -1,24 +1,24 @@
-const mongoose = require("mongoose");
+const mongoose = require('mongoose');
 
 const journalSchema = new mongoose.Schema({
   userId: {
     type: mongoose.Schema.Types.ObjectId,
     required: true,
-    ref: "User"
+    ref: 'User'
   },
   content: {
     type: String,
-    required: true
+    required: true,
   },
   visibility: {
     type: String,
-    enum: ["private", "public"],
-    default: "private"
+    enum: ['private', 'public'],
+    default: 'private',
   },
   createdAt: {
     type: Date,
-    default: Date.now
+    default: Date.now,
   }
 });
 
-module.exports = mongoose.model("Journal", journalSchema);
+module.exports = mongoose.model('Journal', journalSchema);
