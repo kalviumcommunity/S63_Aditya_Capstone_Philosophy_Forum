@@ -51,6 +51,7 @@ let journals = [
 // Basic test endpoint
 app.get("/api/hello", (req, res) => {
   res.json({ message: "Hello, this is Philosophy Forum!" });
+  
 });
 
 // PUT route to update journal entry
@@ -72,7 +73,7 @@ app.put("/api/journals/update/:id", (req, res) => {
   res.status(200).json(journals[journalIndex]);
 });
 
-// Journal routes (you can add more journal-related routes here in the future)
+
 const journalRoutes = require("./routes/journalRoutes");
 app.use("/api/journals", journalRoutes);
 
