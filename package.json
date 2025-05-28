@@ -10,7 +10,22 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
+<<<<<<< HEAD
+  "devDependencies": {
+    "vite": "^6.3.5"
+  },
+  "dependencies": {
+    "@chakra-ui/icons": "^2.2.4",
+    "@chakra-ui/react": "^3.17.0",
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.0",
+    "dayjs": "^1.11.13",
+    "framer-motion": "^12.10.5",
+    "react-icons": "^5.5.0",
+    "react-router-dom": "^7.6.0"
+=======
   "dependencies": {
     "express": "^5.1.0"
+>>>>>>> c25079c5cbdbc7a5834aa8b2185087e4ba1abe6a
   }
 }

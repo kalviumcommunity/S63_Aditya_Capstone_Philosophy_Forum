@@ -2,29 +2,19 @@
 
 const mongoose = require("mongoose");
 
+const responseSchema = new mongoose.Schema({
+  user: String,
+  text: String,
+  time: String,
+  upvotes: { type: Number, default: 0 },
+  likedBy: [String],
+});
+
 const questionSchema = new mongoose.Schema({
-  type: {
-    type: String,
-    enum: ["daily", "weekly"],
-    required: true,
-  },
-  questionText: {
-    type: String,
-    required: true,
-  },
-  options: [String], // For weekly dilemmas with options
-  responses: [
-    {
-      userId: { type: mongoose.Schema.Types.ObjectId, ref: "User" },
-      answer: String,
-      reasoning: String, // Optional reasoning for weekly dilemmas
-      submittedAt: { type: Date, default: Date.now },
-    },
-  ],
-  createdAt: {
-    type: Date,
-    default: Date.now,
-  },
+  question: String,
+  description: String,
+  responses: [responseSchema],
+  createdAt: { type: Date, default: Date.now },
 });
 
 module.exports = mongoose.model("Question", questionSchema);
