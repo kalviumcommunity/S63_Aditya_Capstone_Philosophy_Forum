@@ -5,13 +5,13 @@ import {
 } from '@chakra-ui/react';
 import { Link } from 'react-router-dom';
 import { HamburgerIcon } from '@chakra-ui/icons';
-import { FaHome, FaBook, FaComments, FaQuestion, FaBalanceScale, FaClipboardList, FaBookmark, FaUser, FaPlus, FaLightbulb } from 'react-icons';
+import { FaHome, FaBook, FaComments, FaQuestion, FaBalanceScaleLeft, FaClipboardList, FaBookmark, FaUser, FaPlus, FaLightbulb } from 'react-icons/fa';
 
 const sidebarLinks = [
   { icon: FaHome, label: 'Home', path: '/dashboard' },
   { icon: FaComments, label: 'Discussions', path: '/discussions' },
   { icon: FaBook, label: 'Journal', path: '/journal' },
-  { icon: FaBalanceScale, label: 'Debates', path: '/debates' },
+  { icon: FaBalanceScaleLeft, label: 'Debates', path: '/debates' },
   { icon: FaQuestion, label: 'Questions', path: '/questions' },
   { icon: FaClipboardList, label: 'Dilemmas', path: '/dilemmas' },
   { icon: FaLightbulb, label: 'Quiz', path: '/quiz' },
