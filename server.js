@@ -1,3 +1,4 @@
+//Server code for a simple Express.js application that serves a JSON response
 const express = require('express');
 const app = express();
 const port = 3000;
@@ -29,6 +30,18 @@ mongoose.connect(DB_URL, {
 })
   .then(() => console.log('MongoDB connected'))
   .catch((err) => console.error('MongoDB connection error:', err));
+
+app.use(express.json()); // Middleware to parse JSON
+
+// In-memory storage for journal entries
+let journalEntries = [
+  {
+    id: "1",
+    title: "First Entry",
+    content: "Some philosophical thoughts",
+    author: "user1"
+  }
+];
 
 // GET endpoint
 app.get('/api/hello', (req, res) => {
@@ -71,6 +84,7 @@ app.put('/api/journal/:id', (req, res) => {
   });
 });
 
+<<<<<<< HEAD
 app.use('/api/dilemmas', dilemmaRoutes);
 app.use('/api/discussions', discussionRoutes);
 app.use('/api/journal', journalRoutes);
@@ -78,6 +92,8 @@ app.use('/api/debates', debateRoutes);
 app.use('/api/questions', questionRoutes);
 app.use('/api/quiz-results', quizResultRoutes);
 
+=======
+>>>>>>> c25079c5cbdbc7a5834aa8b2185087e4ba1abe6a
 app.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`);
 });

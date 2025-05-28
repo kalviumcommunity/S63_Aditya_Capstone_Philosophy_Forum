@@ -1,5 +1,7 @@
 [build]
-base = "client"
-publish = "dist"
-command = "npm run build"
-functions = "functions"
+  base = "client"
+  publish = "dist"
+  command = "npm run build"
+
+[functions]
+  directory = "functions"
