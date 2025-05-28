@@ -2,19 +2,26 @@
 
 const mongoose = require("mongoose");
 
+const responseSchema = new mongoose.Schema({
+  user: String,
+  time: String,
+  text: String,
+  upvotes: { type: Number, default: 0 },
+  likedBy: [String], // user IDs or session IDs
+});
+
+const optionSchema = new mongoose.Schema({
+  label: String,
+  votes: { type: Number, default: 0 },
+});
+
 const dilemmaSchema = new mongoose.Schema({
-  title: {
-    type: String,
-    required: true,
-  },
-  scenario: {
-    type: String,
-    required: true,
-  },
-  options: {
-    type: [String], // e.g. ["Pull the lever", "Do nothing"]
-    required: true,
-  },
+  title: String,
+  subtitle: String,
+  description: String,
+  timeLeft: String,
+  options: [optionSchema],
+  responses: [responseSchema],
   createdAt: {
     type: Date,
     default: Date.now,

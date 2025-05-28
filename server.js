@@ -1,6 +1,13 @@
 const express = require('express');
 const app = express();
 const port = 3000;
+const mongoose = require('mongoose');
+const dilemmaRoutes = require('./server/routes/dilemmaRoutes');
+const discussionRoutes = require('./server/routes/discussionRoutes');
+const journalRoutes = require('./server/routes/journalRoutes');
+const debateRoutes = require('./server/routes/debateRoutes');
+const questionRoutes = require('./server/routes/questionRoutes');
+const quizResultRoutes = require('./server/routes/quizResultRoutes');
 
 app.use(express.json()); // Middleware to parse JSON
 
@@ -13,6 +20,15 @@ let journalEntries = [
     author: "user1"
   }
 ];
+
+const DB_URL = 'mongodb+srv://driftx:Saksham1234@driftx.iixmutb.mongodb.net/';
+
+mongoose.connect(DB_URL, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+})
+  .then(() => console.log('MongoDB connected'))
+  .catch((err) => console.error('MongoDB connection error:', err));
 
 // GET endpoint
 app.get('/api/hello', (req, res) => {
@@ -54,6 +70,13 @@ app.put('/api/journal/:id', (req, res) => {
     data: journalEntries[entryIndex]
   });
 });
+
+app.use('/api/dilemmas', dilemmaRoutes);
+app.use('/api/discussions', discussionRoutes);
+app.use('/api/journal', journalRoutes);
+app.use('/api/debates', debateRoutes);
+app.use('/api/questions', questionRoutes);
+app.use('/api/quiz-results', quizResultRoutes);
 
 app.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`);

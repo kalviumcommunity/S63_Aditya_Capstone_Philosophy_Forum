@@ -5,7 +5,7 @@ import {
 } from '@chakra-ui/react';
 import { Link } from 'react-router-dom';
 import { HamburgerIcon } from '@chakra-ui/icons';
-import { FaHome, FaBook, FaComments, FaQuestion, FaBalanceScale, FaClipboardList, FaBookmark, FaUser, FaPlus, FaLightbulb } from 'react-icons/fa';
+import { FaHome, FaBook, FaComments, FaQuestion, FaBalanceScale, FaClipboardList, FaBookmark, FaUser, FaPlus, FaLightbulb } from 'react-icons';
 
 const sidebarLinks = [
   { icon: FaHome, label: 'Home', path: '/dashboard' },
