@@ -14,9 +14,12 @@ export default defineConfig({
     },
   },
   build: {
-    rollupOptions: {
-      external: ['dayjs'],
+    commonjsOptions: {
+      include: [/dayjs/, /node_modules/],
     },
+  },
+  optimizeDeps: {
+    include: ['dayjs'],
   },
   resolve: {
     alias: {
