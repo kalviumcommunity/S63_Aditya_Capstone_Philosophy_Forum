@@ -15,15 +15,10 @@ export default defineConfig({
   },
   build: {
     commonjsOptions: {
-      include: [/dayjs/, /node_modules/],
+      transformMixedEsModules: true,
     },
   },
   optimizeDeps: {
     include: ['dayjs'],
-  },
-  resolve: {
-    alias: {
-      'dayjs': 'dayjs',
-    },
   },
 })
